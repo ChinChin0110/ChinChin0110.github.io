@@ -150,6 +150,70 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://robinchin.github.io/2020/05/18/Trigger-UIAlertAction-programmatically/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Robin Chin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Robin's Note">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/18/Trigger-UIAlertAction-programmatically/" class="post-title-link" itemprop="url">Trigger UIAlertAction programmatically</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-18 15:53:37 / Modified: 08:08:01" itemprop="dateCreated datePublished" datetime="2020-05-18T15:53:37+00:00">2020-05-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Sometimes you write unit testing, and have to trigger UIAlertAction without user interface.<br>then just do following:</p>
+<p>Extension</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIAlertAction</span> </span>&#123;</span><br><span class="line">    <span class="keyword">typealias</span> <span class="type">AlertHandler</span> = <span class="meta">@convention</span>(block) (<span class="type">UIAlertAction</span>) -&gt; <span class="type">Void</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">trigger</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> block = value(forKey: <span class="string">"handler"</span>) <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">XCTFail</span>(<span class="string">"Should not be here"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> handler = <span class="built_in">unsafeBitCast</span>(block <span class="keyword">as</span> <span class="type">AnyObject</span>, to: <span class="type">AlertHandler</span>.<span class="keyword">self</span>)</span><br><span class="line">        handler(<span class="keyword">self</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Usage</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> alertAction = <span class="type">UIAlertAction</span>(title: <span class="string">"test"</span>, style: .<span class="keyword">default</span>) &#123; (action) <span class="keyword">in</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"action triggered!"</span>)</span><br><span class="line">&#125;</span><br><span class="line">alertAction.trigger()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://robinchin.github.io/2020/05/08/Deploy-Hexo-with-Github-Action/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,10 +237,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-08 03:00:23 / Modified: 16:15:40" itemprop="dateCreated datePublished" datetime="2020-05-08T03:00:23+00:00">2020-05-08</time>
+              <time title="Created: 2020-05-08 03:00:23" itemprop="dateCreated datePublished" datetime="2020-05-08T03:00:23+00:00">2020-05-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-18 08:08:01" itemprop="dateModified" datetime="2020-05-18T08:08:01+00:00">2020-05-18</time>
+              </span>
 
           
 
@@ -238,10 +308,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-08 00:35:31 / Modified: 16:15:40" itemprop="dateCreated datePublished" datetime="2020-05-08T00:35:31+00:00">2020-05-08</time>
+              <time title="Created: 2020-05-08 00:35:31" itemprop="dateCreated datePublished" datetime="2020-05-08T00:35:31+00:00">2020-05-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-18 08:08:01" itemprop="dateModified" datetime="2020-05-18T08:08:01+00:00">2020-05-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -344,7 +420,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -357,7 +433,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

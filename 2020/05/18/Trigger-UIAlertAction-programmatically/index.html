@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"robinchin.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Using Golang with websocket to fetch ptt data.">
+  <meta name="description" content="Sometimes you write unit testing, and have to trigger UIAlertAction without user interface.then just do following: Extension 1234567891011extension UIAlertAction &amp;#123;    typealias AlertHandler &#x3D; @co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Golang+Ptt">
-<meta property="og:url" content="https://robinchin.github.io/2020/05/08/Golang-Ptt/index.html">
+<meta property="og:title" content="Trigger UIAlertAction programmatically">
+<meta property="og:url" content="https://robinchin.github.io/2020/05/18/Trigger-UIAlertAction-programmatically/index.html">
 <meta property="og:site_name" content="Robin&#39;s Note">
-<meta property="og:description" content="Using Golang with websocket to fetch ptt data.">
+<meta property="og:description" content="Sometimes you write unit testing, and have to trigger UIAlertAction without user interface.then just do following: Extension 1234567891011extension UIAlertAction &amp;#123;    typealias AlertHandler &#x3D; @co">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-08T00:35:31.000Z">
+<meta property="article:published_time" content="2020-05-18T15:53:37.000Z">
 <meta property="article:modified_time" content="2020-05-18T08:08:01.934Z">
 <meta property="article:author" content="Robin Chin">
-<meta property="article:tag" content="golang">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="Swift">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://robinchin.github.io/2020/05/08/Golang-Ptt/">
+<link rel="canonical" href="https://robinchin.github.io/2020/05/18/Trigger-UIAlertAction-programmatically/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>Golang+Ptt | Robin's Note</title>
+  <title>Trigger UIAlertAction programmatically | Robin's Note</title>
   
 
 
@@ -156,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://robinchin.github.io/2020/05/08/Golang-Ptt/">
+    <link itemprop="mainEntityOfPage" href="https://robinchin.github.io/2020/05/18/Trigger-UIAlertAction-programmatically/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Golang+Ptt
+          Trigger UIAlertAction programmatically
         </h1>
 
         <div class="post-meta">
@@ -178,24 +179,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-05-08 00:35:31" itemprop="dateCreated datePublished" datetime="2020-05-08T00:35:31+00:00">2020-05-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-18 08:08:01" itemprop="dateModified" datetime="2020-05-18T08:08:01+00:00">2020-05-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a>
-                </span>
+              <time title="Created: 2020-05-18 15:53:37 / Modified: 08:08:01" itemprop="dateCreated datePublished" datetime="2020-05-18T15:53:37+00:00">2020-05-18</time>
             </span>
 
           
@@ -209,7 +195,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Using Golang with websocket to fetch ptt data.</p>
+        <p>Sometimes you write unit testing, and have to trigger UIAlertAction without user interface.<br>then just do following:</p>
+<p>Extension</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIAlertAction</span> </span>&#123;</span><br><span class="line">    <span class="keyword">typealias</span> <span class="type">AlertHandler</span> = <span class="meta">@convention</span>(block) (<span class="type">UIAlertAction</span>) -&gt; <span class="type">Void</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">trigger</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> block = value(forKey: <span class="string">"handler"</span>) <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">XCTFail</span>(<span class="string">"Should not be here"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> handler = <span class="built_in">unsafeBitCast</span>(block <span class="keyword">as</span> <span class="type">AnyObject</span>, to: <span class="type">AlertHandler</span>.<span class="keyword">self</span>)</span><br><span class="line">        handler(<span class="keyword">self</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Usage</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> alertAction = <span class="type">UIAlertAction</span>(title: <span class="string">"test"</span>, style: .<span class="keyword">default</span>) &#123; (action) <span class="keyword">in</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"action triggered!"</span>)</span><br><span class="line">&#125;</span><br><span class="line">alertAction.trigger()</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -219,7 +210,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/golang/" rel="tag"># golang</a>
+              <a href="/tags/iOS/" rel="tag"># iOS</a>
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
           </div>
 
         
@@ -227,11 +219,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/05/08/Deploy-Hexo-with-Github-Action/" rel="next" title="Deploy Hexo with Github Action">
-      Deploy Hexo with Github Action <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/08/Deploy-Hexo-with-Github-Action/" rel="prev" title="Deploy Hexo with Github Action">
+      <i class="fa fa-chevron-left"></i> Deploy Hexo with Github Action
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
